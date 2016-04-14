@@ -10,7 +10,6 @@ test_that("phylomatic - GET (default) method works", {
   expect_is(taxa, "character")
   expect_is(tree, "phylo")
   expect_is(tree, "phylomatic")
-  expect_named(tree, c('edge', 'tip.label', 'Nnode', 'node.label'))
 })
 
 
@@ -21,7 +20,6 @@ test_that("phylomatic - POST method works", {
 
 	expect_is(tree, "phylo")
 	expect_is(tree, "phylomatic")
-	expect_named(tree, c('edge', 'tip.label', 'Nnode', 'node.label'))
 })
 
 test_that("phylomatic - stored tree", {
@@ -31,8 +29,6 @@ test_that("phylomatic - stored tree", {
 
   expect_is(tree, "phylo")
   expect_is(tree, "phylomatic")
-  # when smith2011, doesn't have node.label's
-  expect_named(tree, c('edge', 'tip.label', 'Nnode'))
 })
 
 test_that("phylomatic - nexml output format", {
@@ -55,7 +51,6 @@ test_that("phylomatic - treeuri param", {
 
   expect_is(tree, "phylo")
   expect_is(tree, "phylomatic")
-  expect_named(tree, c('edge', 'tip.label', 'Nnode'))
   expect_equal(tree$tip.label, spp)
 })
 

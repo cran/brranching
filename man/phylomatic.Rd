@@ -6,8 +6,8 @@
 \usage{
 phylomatic(taxa, taxnames = TRUE, get = "GET", informat = "newick",
   method = "phylomatic", storedtree = "R20120829", treeuri = NULL,
-  taxaformat = "slashpath", outformat = "newick", clean = "true",
-  db = "apg", verbose = TRUE)
+  taxaformat = "slashpath", outformat = "newick", clean = TRUE,
+  db = "apg", verbose = TRUE, ...)
 }
 \arguments{
 \item{taxa}{Phylomatic format input of taxa names.}
@@ -24,8 +24,8 @@ informat should always be newick.}
 \item{method}{One of phylomatic (default) or convert}
 
 \item{storedtree}{One of R20120829 (Phylomatic tree R20120829 for plants),
-smith2011 (Smith 2011, plants), or binindaemonds2007 (Bininda-Emonds 2007,
-mammals). Default: R20120829}
+smith2011 (Smith 2011, plants), binindaemonds2007 (Bininda-Emonds 2007,
+mammals), or zanne2014 (Zanne et al. 2014, plants). Default: R20120829}
 
 \item{treeuri}{URL for a phylogenetic tree in newick format.}
 
@@ -33,11 +33,13 @@ mammals). Default: R20120829}
 
 \item{outformat}{One of newick, nexml, or fyt.}
 
-\item{clean}{Return a clean tree or not. Default: \code{true}}
+\item{clean}{Return a clean tree or not. Default: \code{TRUE}}
 
 \item{db}{One of "ncbi", "itis", or "apg". Default: apg}
 
 \item{verbose}{Print messages. Default: \code{TRUE}}
+
+\item{...}{curl options passed on to \code{\link[httr]{GET}} or \code{\link[httr]{POST}}}
 }
 \value{
 Newick formatted tree as \code{phylo} object or
@@ -67,6 +69,13 @@ taxa <- c("Poa annua", "Collomia grandiflora", "Lilium lankongense", "Phlox diff
 tree <- phylomatic(taxa=taxa, get = 'POST')
 plot(tree, no.margin=TRUE)
 
+# Don't clean - clean=TRUE is default
+(tree <- phylomatic(taxa=taxa, clean = FALSE))
+## with clean=FALSE, you can get non-splitting nodes, which you
+## need to collpase before plotting
+library('ape')
+plot(collapse.singles(tree), no.margin=TRUE)
+
 # Output NeXML format
 taxa <- c("Gonocarpus leptothecus", "Gonocarpus leptothecus", "Lilium lankongense")
 out <- phylomatic(taxa=taxa, get = 'POST', outformat = "nexml")
@@ -76,13 +85,12 @@ cat(out)
 # names, so there's no per se rule), you will get an error when using \\code{get='GET'},
 # when that happens use \\code{get='POST'}
 library("taxize")
-spp <- names_list("species", 200)
+spp <- names_list("species", 5000)
 # phylomatic(taxa = spp, get = "GET")
 (out <- phylomatic(taxa = spp, get = "POST"))
 plot(out)
 
 # Pass in a tree from a URL on the web
-
 spp <- c("Abies_nordmanniana", "Abies_bornmuelleriana", "Abies_cilicica", "Abies_cephalonica",
 "Abies_numidica", "Abies_pinsapo", "Abies_alba")
 url <- "http://datadryad.org/bitstream/handle/10255/dryad.8791/final_tree.tre?sequence=1"
