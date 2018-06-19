@@ -21,7 +21,6 @@
 #' @param outfile (character) output file for the tree, cleaned up after
 #' @param cleanup (logical) Remove the output file. Default: \code{TRUE}
 #' @param path (character) Path to the \code{phylomatic-ws} folder
-#' @param ... curl options passed on to \code{\link[httr]{GET}} or \code{\link[httr]{POST}}
 #'
 #' @section Fetch Phylomatic code:
 #' Download the code by doing \code{git clone https://github.com/camwebb/phylomatic-ws}
@@ -58,7 +57,7 @@
 phylomatic_local <- function(taxa = NULL, taxauri = NULL, taxnames = TRUE,
   informat = "newick", method = "phylomatic", storedtree = "R20120829", treeuri = NULL,
   taxaformat = "slashpath", outformat = "newick", clean = TRUE, db="apg",
-  verbose=TRUE, outfile = "out.new", cleanup = TRUE, path = "phylomatic-ws", ...) {
+  verbose=TRUE, outfile = "out.new", cleanup = TRUE, path = "phylomatic-ws") {
 
   # check for awk, gawk, and awk files
   check_if("awk")
