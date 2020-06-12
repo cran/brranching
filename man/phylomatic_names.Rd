@@ -31,7 +31,7 @@ output input string to Phylomatic for use in the function phylomatic
 
 NCBI Entrez doesn't require that you use an API key, but you get
 higher rate limit with a key, from 3 to 10 requests per second, so do
-get one. Run \code{\link[taxize:use_entrez]{taxize::use_entrez()}} or see
+get one. Run \code{taxize::use_entrez()} or see
 https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/
 for instructions.
 
@@ -49,6 +49,10 @@ if you're using the shell) to take advantage of the new R options
 or environment variables.
 
 We strongly recommend using environment variables over R options.
+
+Note that if you don't have an ENTREZ_KEY set, you'll get a message
+about it, but only once during each function call. That is, there
+can be of these messages per R session, across function calls.
 }
 
 \examples{
