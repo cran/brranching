@@ -1,7 +1,7 @@
-299252c321caecf88e552d8186afb69d *DESCRIPTION
+881ae7615f46b1de064c83125c742f80 *DESCRIPTION
 35bd8606c71dfbfad3ad27387e177ad4 *LICENSE
 c5850661ba22b23eb6abea3b94e4f3d7 *NAMESPACE
-c78918e08967837f11511c5be1e57453 *NEWS.md
+601db41eb1a5c2104aadaa28fd8be13e *NEWS.md
 77e6564398ac0edda1100c5b974ffbad *R/brranching-package.R
 9367241b03653d5454cc3c1fc0532acd *R/globals.R
 d5782bd0ceeb1792fe878e9f7daaf6b6 *R/helpers.R
@@ -10,12 +10,9 @@ d5782bd0ceeb1792fe878e9f7daaf6b6 *R/helpers.R
 8798f4bd113f67f93e635e0f213cfdfb *R/phylomatic_names.R
 21e9c7ed19b9d21d2a1ada789860e771 *R/rbladj.R
 a9035714eca69ad59eca46751a80da66 *R/zzz.R
-a7c506b5f261a6309686693decff04e7 *README.md
-cf6295c378f02fa60c806dff6a46b9bf *build/vignette.rds
+baf9393c991e000ea4316df342a0bce8 *README.md
 bf4d9f864bc2145b7e68206e0022caf4 *data/phylomatic_trees.rda
 9ca9bdf7653cd105f84d60af2f71918c *data/tpl.rda
-21e04cb181f90ba64e824359a0b116bd *inst/doc/brranching.Rmd
-9136d2ecdb8ee10c69ad84094e1350cf *inst/doc/brranching.html
 cdf9dd5eb9854d9d5a8ae1f9d903dc76 *inst/ignore/phylomatic_local.R
 e8b945caad158adb83d884ea4f99efb4 *inst/ignore/phylomedb.R
 0b3327adc96867da0b49043ae41ceb85 *inst/ignore/rbladj_old.R
@@ -31,8 +28,7 @@ a9ccfd97a8873dae107debc24b878ed3 *man/tpl.Rd
 6271b3af349c05ff8b8e88e4ddee091d *tests/test-all.R
 192f2db7c481f9de0e803a23fcfb5810 *tests/testthat/test-phylomatic.R
 99984efdcca226bb40254c8ca02cb8d3 *tests/testthat/test-phylomatic_local.R
-625b5dfa40de9694fdb3265698056faa *tests/testthat/test-phylomatic_names.R
+defde9e156c8d344f9d16d08a3856c87 *tests/testthat/test-phylomatic_names.R
 15bd52da1b59ab3d2e66e868face19d7 *tools/img/unnamed-chunk-5-1.png
 4652fc09752b4a01c6666b309517123f *tools/img/unnamed-chunk-6-1.png
 1edafa948a936731c3440d4d69dcbccc *tools/img/unnamed-chunk-7-1.png
-21e04cb181f90ba64e824359a0b116bd *vignettes/brranching.Rmd
